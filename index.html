@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div>
+                <h1>My Todo List</h1>
+                <p>Organize your day, achieve your goals!</p>
+            </div>
+            <button id="themeBtn">🌙</button>
+        </header>
+
+        <div class="stats">
+            <div class="stat">
+                <h2 id="totalTasks">0</h2>
+                <p>Total Tasks</p>
+            </div>
+            <div class="stat">
+                <h2 id="pendingTasks">0</h2>
+                <p>Pending</p>
+            </div>
+            <div class="stat">
+                <h2 id="completedTasks">0</h2>
+                <p>Completed</p>
+            </div>
+        </div>
+
+        <form id="todoForm">
+            <input type="text" id="taskInput"
+                placeholder="Enter your task..." required>
+
+            <select id="priority">
+                <option value="Low">Low Priority</option>
+                <option value="Medium" selected>Medium Priority</option>
+                <option value="High">High Priority</option>
+            </select>
+
+            <input type="date" id="dueDate">
+
+            <button type="submit" id="addBtn">Add Task</button>
+        </form>
+
+        <input type="text" id="searchInput"
+            placeholder="🔍 Search tasks...">
+
+        <div class="filters">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="pending">Pending</button>
+            <button class="filter" data-filter="completed">Completed</button>
+            <button class="filter" data-filter="high">High Priority</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="footer">
+            <span id="taskCount">0 tasks left</span>
+            <button id="clearBtn">Clear Completed</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

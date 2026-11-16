@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eef2ff;
+    min-height: 100vh;
+    padding: 40px 15px;
+    transition: 0.3s;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px #00000015;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #4f46e5;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #777;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 7px;
+    background: #4f46e5;
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+#themeBtn {
+    font-size: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.stat {
+    background: #eef2ff;
+    text-align: center;
+    padding: 18px 8px;
+    border-radius: 10px;
+}
+
+.stat h2 {
+    color: #4f46e5;
+    margin-bottom: 5px;
+}
+
+.stat p {
+    color: #555;
+    font-size: 13px;
+}
+
+#todoForm {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #4f46e5;
+}
+
+#addBtn {
+    grid-column: span 2;
+}
+
+#searchInput {
+    margin-bottom: 18px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.filter {
+    background: #e5e7eb;
+    color: #333;
+}
+
+.filter.active {
+    background: #4f46e5;
+    color: white;
+}
+
+#taskList {
+    list-style: none;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 9px;
+    margin-bottom: 10px;
+    border-left: 4px solid #4f46e5;
+}
+
+.task-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-info h3 {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.task-info p {
+    font-size: 12px;
+    color: #777;
+    margin-top: 6px;
+}
+
+.task.completed {
+    opacity: 0.6;
+}
+
+.task.completed h3 {
+    text-decoration: line-through;
+}
+
+.priority-High {
+    border-left-color: #ef4444;
+}
+
+.priority-Medium {
+    border-left-color: #f59e0b;
+}
+
+.priority-Low {
+    border-left-color: #22c55e;
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.actions button {
+    padding: 8px;
+}
+
+.edit {
+    background: #2563eb;
+}
+
+.delete {
+    background: #dc2626;
+}
+
+.complete {
+    background: #16a34a;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    color: #666;
+    gap: 10px;
+}
+
+#clearBtn {
+    background: #dc2626;
+}
+
+.empty {
+    text-align: center;
+    color: #888;
+    padding: 25px;
+}
+
+/* Dark Mode */
+
+body.dark {
+    background: #111827;
+}
+
+body.dark .container {
+    background: #1f2937;
+    color: white;
+}
+
+body.dark .stat,
+body.dark .task {
+    background: #374151;
+}
+
+body.dark .stat p,
+body.dark .task-info p,
+body.dark .footer,
+body.dark header p {
+    color: #d1d5db;
+}
+
+body.dark input,
+body.dark select {
+    background: #374151;
+    color: white;
+    border-color: #555;
+}
+
+body.dark .filter {
+    background: #4b5563;
+    color: white;
+}
+
+body.dark .filter.active {
+    background: #4f46e5;
+}
+
+@media (max-width: 550px) {
+    .container {
+        padding: 18px;
+    }
+
+    #todoForm {
+        grid-template-columns: 1fr;
+    }
+
+    #addBtn {
+        grid-column: span 1;
+    }
+
+    .task {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .actions {
+        margin-left: auto;
+    }
+}
